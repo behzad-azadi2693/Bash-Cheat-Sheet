@@ -691,3 +691,23 @@ case $weather in
   ;;
 esac
 ```
+
+
+## for mor
+```
+stdin=0 stdout=1 stderr=2
+<    |input
+>    |1atach
+>>   |1append
+2>   |2
+&>   |1,2
+
+<<EOF   EOF |multi line input
+---------------------------------
+
+
+```
+
+
+
+
