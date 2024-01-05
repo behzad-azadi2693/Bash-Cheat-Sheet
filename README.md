@@ -425,6 +425,7 @@ curl -o|--remote-name foo.txt https://example.com      # Output to a text file
 curl -H|--header "User-Agent: Foo" https://example.com # Add a HTTP header
 curl -X|--request POST -H "Content-Type: application/json" -d|--data '{"foo":"bar"}' https://example.com # POST JSON
 curl -X POST -H --data-urlencode foo="bar" http://example.com                           # POST URL Form Encoded
+curl ipinfo.io
 
 wget https://example.com/file.txt .                            # Download a file to the current directory
 wget -O|--output-document foo.txt https://example.com/file.txt # Output to a file with the specified name
@@ -692,19 +693,26 @@ case $weather in
 esac
 ```
 
+***
 
 ## for mor
 ```
-stdin=0 stdout=1 stderr=2
-<    |input
->    |1atach
->>   |1append
-2>   |2
-&>   |1,2
-
-<<EOF   EOF |multi line input
+#!/bin/bash
+ 
 ---------------------------------
+stdin=0 stdout=1 stderr=2
+<      |input
+>      |1atach
+>>     |1append
+2>     |2 append
+&>     |1,2 append
+2>&1   |1,2 append
+|      |pipe output to input
+<<EOF   EOF |multi line input
 
+---------------------------------
+/dev/null
+echo $?   |exec code
 
 ```
 
