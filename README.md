@@ -695,7 +695,7 @@ esac
 
 ***
 
-## for mor
+## ME
 ```
 #!/bin/bash
  
@@ -713,6 +713,45 @@ stdin=0 stdout=1 stderr=2
 ---------------------------------
 /dev/null
 echo $?   |exec code
+read -p "my text:" variable    |print text get input and save in variable
+bash      |open new shell child (NOTE: you dont change environment variable in child bash)
+export    |define environment variable in this session
+exit ...  |exit 1,0
+sleep ... |wait second
+
+---------------------------------
+if [[ | ]]: then ... elife ... else ... fi
+      |
+     \|/
+
+||  |or
+&&  |and
+-o  |or
+-a  |and
+-f  |file exist
+-d  |directory exist
+-e  |chheck exits
+-r  |check readable
+-x  |check executable
+-z  |check empty
+-n  |check variable empty
+!   |not
+
+---------------------------------
+$@  |list of arguments (arg1, arg2, arg3, ...)
+$1  |get arg1
+()  |is used to group the commands inside the subshell
+[]  |which checks if the conditions between the brackets are true or false
+(1 2 3)  |array
+${array_nme[@]} |get all item array
+${array_nme[0]} |get first item array
+set   |set index
+unset |clean index
+break
+continue
+
+---------------------------------
+
 
 ```
 
